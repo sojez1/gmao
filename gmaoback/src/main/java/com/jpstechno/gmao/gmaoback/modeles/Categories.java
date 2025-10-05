@@ -1,0 +1,28 @@
+package com.jpstechno.gmao.gmaoback.modeles;
+
+import org.hibernate.annotations.NaturalId;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class Categories {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NaturalId
+    private String code;
+
+    private String designation;
+
+}
