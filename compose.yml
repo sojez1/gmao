@@ -1,0 +1,18 @@
+services:
+  gmaoweb:
+    container_name: gmaoweb_container
+    build:
+      context: ./gmaoweb
+      dockerfile: Dockerfile
+    ports:
+      - "2025:3000"
+
+    volumes:
+      - .:/app
+    command: npm run dev
+    network:s:
+      - gmao-network
+
+networks:
+  gmao-network:
+    driver: bridge

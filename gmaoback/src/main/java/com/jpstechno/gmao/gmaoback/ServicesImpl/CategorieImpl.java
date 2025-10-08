@@ -3,6 +3,7 @@ package com.jpstechno.gmao.gmaoback.ServicesImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.jpstechno.gmao.gmaoback.modeles.Categories;
@@ -32,7 +33,8 @@ public class CategorieImpl implements CategorieServ {
 
     @Override
     public List<Categories> getAllCategories() {
-        return null;
+        Sort sortByDesignation = Sort.by(Sort.Direction.ASC, "designation");
+        return categorieDao.findAll(sortByDesignation);
     }
 
     @Override

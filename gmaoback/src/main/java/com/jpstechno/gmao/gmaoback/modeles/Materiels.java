@@ -20,7 +20,7 @@ public class Materiels {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NaturalId
+    @NaturalId(mutable = true)
     private String codeInterne;
 
     private String appelation;

@@ -2,6 +2,7 @@ package com.jpstechno.gmao.gmaoback.modeles;
 
 import org.hibernate.annotations.NaturalId;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,9 +21,10 @@ public class Categories {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NaturalId
+    @NaturalId(mutable = true)
     private String code;
 
+    @Column(length = 50, unique = true, name = "designaition", nullable = false)
     private String designation;
 
 }
