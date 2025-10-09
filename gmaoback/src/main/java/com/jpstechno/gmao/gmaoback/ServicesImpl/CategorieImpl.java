@@ -23,12 +23,23 @@ public class CategorieImpl implements CategorieServ {
 
     @Override
     public Categories updateCategorie(Categories categorie, Long id) {
-        return null;
+        Categories existingCategorie = categorieDao.findById(id).orElse(null);
+        if (existingCategorie != null) {
+            existingCategorie.setCode(categorie.getCode());
+            existingCategorie.setDesignation(categorie.getDesignation());
+            return categorieDao.save(existingCategorie);
+        } else {
+            return null;
+        }
     }
 
     @Override
     public void deleteCategorie(Long id) {
-
+        try {
+            categorieDao.deleteById(id);
+        } catch (Exception e) {
+            System.out.println("Erreur lors de la suppression de la catégorie : " + e.getMessage());
+        }
     }
 
     @Override
@@ -39,7 +50,7 @@ public class CategorieImpl implements CategorieServ {
 
     @Override
     public Categories getCategorieById(Long id) {
-        return null;
+        return categorieDao.findById(id).orElse(null);
     }
 
     @Override
@@ -54,7 +65,7 @@ public class CategorieImpl implements CategorieServ {
 
     @Override
     public boolean CategoriesExistById(Long id) {
-        return false;
+        return categorieDao.existsById(id);
     }
 
     @Override
