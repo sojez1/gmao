@@ -20,7 +20,7 @@ import com.jpstechno.gmao.gmaoback.repositories.CategorieDao;
 @DisplayName("Tests unitaires pour les catégories")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ActiveProfiles("test") // tell springboot to use application-test.properties file for test
-public class CategoriesTest {
+public class CategoriesRepoTest {
 
     @Autowired
     private CategorieDao categorieDao;

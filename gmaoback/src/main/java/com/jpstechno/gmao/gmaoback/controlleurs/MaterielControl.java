@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jpstechno.gmao.gmaoback.ServicesImpl.CategorieImpl;
+import com.jpstechno.gmao.gmaoback.ServicesImpl.MaterielImpl;
 import com.jpstechno.gmao.gmaoback.modeles.Categories;
+import com.jpstechno.gmao.gmaoback.modeles.Materiels;
 
 @RestController
 @RequestMapping("/materiels")
@@ -23,8 +25,11 @@ public class MaterielControl {
     @Autowired
     private CategorieImpl categorieImpl;
 
+    @Autowired
+    private MaterielImpl materielImpl;
+
     @GetMapping("/categories")
-    public List<Categories> getAllMateriels() {
+    public List<Categories> getAllCategories() {
         return categorieImpl.getAllCategories();
     }
 
@@ -36,6 +41,16 @@ public class MaterielControl {
     @DeleteMapping("/categories/{id}")
     public void deleteCategorie(@PathVariable Long id) {
         categorieImpl.deleteCategorie(id);
+    }
+
+    @GetMapping("/materiels/add")
+    public Materiels ajoutMateriel(@RequestBody Materiels materiel) {
+        return materielImpl.insertMateriel(materiel);
+    }
+
+    @GetMapping("/materiels/all")
+    public List<Materiels> getAllMateriels() {
+        return materielImpl.getAllMateriels();
     }
 
 }

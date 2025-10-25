@@ -1,0 +1,1 @@
+insert into materiels(codeinterne, categorie, appelation, marque, modele, description, dateenregistrement) VALUES('PPM10','2','engin manutention', 'PPM,'Terex','sts','engins achete en 2025',date.now());
