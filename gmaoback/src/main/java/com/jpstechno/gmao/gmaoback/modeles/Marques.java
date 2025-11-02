@@ -2,6 +2,8 @@ package com.jpstechno.gmao.gmaoback.modeles;
 
 import java.util.List;
 
+import org.hibernate.annotations.NaturalId;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -24,8 +26,9 @@ public class Marques {
     private long id;
 
     @Column(length = 50, nullable = false, unique = true)
+    @NaturalId(mutable = true)
     private String libemarque;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "marqueFk")
-    private List<MaterielModele> listemodele;
+    private List<Modeles> listemodele;
 }

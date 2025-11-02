@@ -38,8 +38,6 @@ public class MaterielsRepositoryTest {
         mat1.setAppelation("engins de levage STS PPM");
         mat1.setCategorie(cat1);
         mat1.setCodeInterne("PPM-0125");
-        mat1.setMarque("Terex");
-        mat1.setModele("newModele");
         mat1.setNumeroSerie("0012124244445");
         mat1.setEtat("ok");
         Materiels savedMateriel = mateRepo.save(mat1);

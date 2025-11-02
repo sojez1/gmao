@@ -29,6 +29,6 @@ public class Pieces {
 
     private String commentaires;
 
-    private List<Pieces> piecesEquivalente;
+    // private List<Pieces> piecesEquivalente;
 
 }
