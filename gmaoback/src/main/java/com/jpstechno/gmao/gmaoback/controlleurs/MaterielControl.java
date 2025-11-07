@@ -3,6 +3,8 @@ package com.jpstechno.gmao.gmaoback.controlleurs;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,13 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jpstechno.gmao.gmaoback.ServicesImpl.CategorieImpl;
+
 import com.jpstechno.gmao.gmaoback.ServicesImpl.MaterielImpl;
 import com.jpstechno.gmao.gmaoback.modeles.Categories;
 import com.jpstechno.gmao.gmaoback.modeles.Materiels;
 
 @RestController
 @RequestMapping("/materiels")
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin("http://localhost:8085")
 public class MaterielControl {
 
     @Autowired
